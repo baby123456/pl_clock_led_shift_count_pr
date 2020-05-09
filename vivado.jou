@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun May  3 01:05:31 2020
+# Process ID: 28154
+# Current directory: /home/ict/led_shift_count/led_shift_count_us
+# Command line: vivado -mode tcl
+# Log file: /home/ict/led_shift_count/led_shift_count_us/vivado.log
+# Journal file: /home/ict/led_shift_count/led_shift_count_us/vivado.jou
+#-----------------------------------------------------------
+clear
+ls
+source all.tcl
+ls
+vim all.tcl
+vim all.tcl
+vim all.tcl
+clear
+source all.tcl
+vim all.tcl
+vim all.tcl
+clear
+ls
+clear
+source all.tcl
+vim all.tcl
+ls
+ls Bit*
+ls Bitstreams
+set x1 7
+set x2 6
+set y1 5
+set y2 4
+set x1 7
+set x2 6
+set y1 5
+{{$x1 $y1} {$x2 $y2}}
+{ $x1 $y1}
+{ "$x1" "$y1"}
+"$x1 $y1"
+"${x1} ${y1}"
+$x1
+{inst_shift inst_count}
+set a {inst_shift inst_count}
+a
+set x inst_shift 
+set y inst_count
+{ $x $y }
+" $x $y "
+"$x $y"
+{$x $y}
+clear
+ls
+vim all.tcl
+clear
+source all.tcl
+vim full.tcl
+vim all.tcl
+clear
+source all.tcl
+ls
+ls -l
+ls -l Bitstreams
+rm -rf  Bitstreams/*.log
+ls -l Bitstreams
+clear
+ls
+clear
+source all.tcl
+ls
+ls Bitstreams
+ls -l Bitstreams
+clear
+ls
+git status
+git add .
