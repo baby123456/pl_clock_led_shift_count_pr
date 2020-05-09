@@ -36,24 +36,49 @@ module top(
        begin
          count <= count + 1;
        end
-   zynq_ultra_ps_e_0 zynq_inst (
+   zynq_ultra_ps_e_0 zynq_inst (             
       .maxihpm0_lpd_aclk(pl_clk),             // input wire maxihpm0_lpd_aclk
+      .maxigp2_awid(),            // output wire [15 : 0] maxigp2_awid
+      .maxigp2_awaddr(),        // output wire [39 : 0] maxigp2_awaddr
+      .maxigp2_awlen(),          // output wire [7 : 0] maxigp2_awlen
+      .maxigp2_awsize(),        // output wire [2 : 0] maxigp2_awsize
+      .maxigp2_awburst(),      // output wire [1 : 0] maxigp2_awburst
+      .maxigp2_awlock(),        // output wire maxigp2_awlock
+      .maxigp2_awcache(),      // output wire [3 : 0] maxigp2_awcache
+      .maxigp2_awprot(),        // output wire [2 : 0] maxigp2_awprot
+      .maxigp2_awvalid(),      // output wire maxigp2_awvalid
+      .maxigp2_awuser(),        // output wire [15 : 0] maxigp2_awuser
       .maxigp2_awready(1'b0),                 // input wire maxigp2_awready
-      .maxigp2_wready(1'b0),                  // input wire maxigp2_wready
-      // input wire [15 : 0] maxigp2_bid
-      .maxigp2_bid({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),              
-      .maxigp2_bresp({1'b0,1'b0}),            // input wire [1 : 0] maxigp2_bresp
-      .maxigp2_bvalid(1'b0),                  // input wire maxigp2_bvalid
-      .maxigp2_arready(1'b0),                 // input wire maxigp2_arready
-      // input wire [15 : 0] maxigp2_rid
-      .maxigp2_rid({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),             
-      // input wire [127 : 0] maxigp2_rdata
-      .maxigp2_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),          
-      .maxigp2_rresp({1'b0,1'b0}),            // input wire [1 : 0] maxigp2_rresp
-      .maxigp2_rlast(1'b0),                   // input wire maxigp2_rlast
-      .maxigp2_rvalid(1'b0),                  // input wire maxigp2_rvalid
-      .pl_resetn0(pl_resetn),                 // output wire pl_resetn0
-      .pl_clk0(pl_clk)                        // output wire pl_clk0
+      .maxigp2_wdata(),          // output wire [127 : 0] maxigp2_wdata
+      .maxigp2_wstrb(),          // output wire [15 : 0] maxigp2_wstrb
+      .maxigp2_wlast(),          // output wire maxigp2_wlast
+      .maxigp2_wvalid(),        // output wire maxigp2_wvalid
+      .maxigp2_wready(1'b0),        // input wire maxigp2_wready
+      .maxigp2_bid({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),   
+      .maxigp2_bresp({1'b0,1'b0}),          // input wire [1 : 0] maxigp2_bresp
+      .maxigp2_bvalid(1'b0),        // input wire maxigp2_bvalid
+      .maxigp2_bready(),        // output wire maxigp2_bready
+      .maxigp2_arid(),            // output wire [15 : 0] maxigp2_arid
+      .maxigp2_araddr(),        // output wire [39 : 0] maxigp2_araddr
+      .maxigp2_arlen(),          // output wire [7 : 0] maxigp2_arlen
+      .maxigp2_arsize(),        // output wire [2 : 0] maxigp2_arsize
+      .maxigp2_arburst(),      // output wire [1 : 0] maxigp2_arburst
+      .maxigp2_arlock(),        // output wire maxigp2_arlock
+      .maxigp2_arcache(),      // output wire [3 : 0] maxigp2_arcache
+      .maxigp2_arprot(),        // output wire [2 : 0] maxigp2_arprot
+      .maxigp2_arvalid(),      // output wire maxigp2_arvalid
+      .maxigp2_aruser(),        // output wire [15 : 0] maxigp2_aruser
+      .maxigp2_arready(1'b0),      // input wire maxigp2_arready
+      .maxigp2_rid({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),              // input wire [15 : 0] maxigp2_rid
+      .maxigp2_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),          // input wire [127 : 0] maxigp2_rdata
+      .maxigp2_rresp({1'b0,1'b0}),          // input wire [1 : 0] maxigp2_rresp
+      .maxigp2_rlast(1'b0),          // input wire maxigp2_rlast
+      .maxigp2_rvalid(1'b0),        // input wire maxigp2_rvalid
+      .maxigp2_rready(),        // output wire maxigp2_rready
+      .maxigp2_awqos(),          // output wire [3 : 0] maxigp2_awqos
+      .maxigp2_arqos(),          // output wire [3 : 0] maxigp2_arqos
+      .pl_resetn0(pl_resetn),                // output wire pl_resetn0
+      .pl_clk0(pl_clk)                      // output wire pl_clk0
 );
 
 endmodule
