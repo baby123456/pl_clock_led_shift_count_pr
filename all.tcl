@@ -39,7 +39,6 @@ create_project -in_memory -part ${device}
 set_property source_mgmt_mode All [current_project]
 set_property board_part ${board} [current_project]
 add_files $rtlDir/${static}/${static}.v
-#add_files E:/fastAcess/recent/xen_on_ARM/PR/pr_ps_clock_led/pr_ps_clock_led.srcs/sources_1/bd/pr_ps_clock_led/pr_ps_clock_led.bd
 synth_design -mode default -flatten_hierarchy rebuilt -top ${static} -part ${device} 
 write_checkpoint -force $synthDir/Static/${static}_synth.dcp
 report_utilization -file $synthDir/Static/${static}_utilization_synth.rpt
